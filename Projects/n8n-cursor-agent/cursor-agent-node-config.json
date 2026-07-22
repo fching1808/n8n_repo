@@ -1,0 +1,79 @@
+{
+  "draftVersionId": "3de4cc44-d6d3-44de-91a9-1274669b45f9",
+  "activeVersionId": "47572c90-3558-454f-bae7-fdbd0dc65a40",
+  "versionIdsDiffer": true,
+  "draftNodes": [
+    {
+      "name": "Create Cursor Agent",
+      "id": "824c7a81-38e6-4157-81f7-9b4c7b591ffc",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.cursor.com/v1/agents",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { prompt: { text: $json.prompt }, model: { id: 'composer-2.5' }, name: 'Cursor Main Analyzer' } }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "credentials": null
+    },
+    {
+      "name": "Poll Run Status",
+      "id": "6022f7ab-cb9e-458d-816f-0d305a520e7f",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "parameters": {
+        "url": "={{ 'https://api.cursor.com/v1/agents/' + $json.agentId + '/runs/' + $json.runId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "credentials": null
+    }
+  ],
+  "activeVersionNodes": [
+    {
+      "name": "Create Cursor Agent",
+      "id": "824c7a81-38e6-4157-81f7-9b4c7b591ffc",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.cursor.com/v1/agents",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ { prompt: { text: $json.prompt }, model: { id: 'composer-2.5' }, name: 'Cursor Main Analyzer' } }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "credentials": null
+    },
+    {
+      "name": "Poll Run Status",
+      "id": "6022f7ab-cb9e-458d-816f-0d305a520e7f",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "parameters": {
+        "method": "GET",
+        "url": "={{ 'https://api.cursor.com/v1/agents/' + $json.agentId + '/runs/' + $json.runId }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpBasicAuth",
+        "options": {
+          "timeout": 30000
+        }
+      },
+      "credentials": null
+    }
+  ]
+}

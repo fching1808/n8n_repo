@@ -1,0 +1,42 @@
+{
+  "Edit Fields": {
+    "promptsLength": 15500,
+    "message": "Provide sample alerts",
+    "promptsFirst300": "Analyze this n8n response (truncated). Summarize key alerts and notable patterns.\n\n[{\"severity\":\"3\",\"u_reported_date\":\"2026-07-22 17:13:57\",\"short_description\":\" CXS-ALERTS-prod | API-STATS | High | API System Error Rate | GetAccountStatus | 20\",\"u_initial_assessment\":\"\",\"u_rpt_r2r_update_time\":\"\",\""
+  },
+  "HTTP Request": {
+    "agent": {
+      "id": "bc-e935328e-c03f-45f6-a7c9-81ad9bf42ea6",
+      "name": "Cursor Main Analyzer",
+      "status": "ACTIVE",
+      "env": {
+        "type": "cloud"
+      },
+      "repos": [],
+      "workOnCurrentBranch": false,
+      "url": "https://cursor.com/agents/bc-e935328e-c03f-45f6-a7c9-81ad9bf42ea6",
+      "createdAt": "2026-07-22T17:14:34.887Z",
+      "updatedAt": "2026-07-22T17:15:09.839Z",
+      "latestRunId": "run-bda1f0ee-9276-44a3-80d1-0ba6e9840639"
+    },
+    "run": {
+      "id": "run-bda1f0ee-9276-44a3-80d1-0ba6e9840639",
+      "agentId": "bc-e935328e-c03f-45f6-a7c9-81ad9bf42ea6",
+      "status": "ERROR",
+      "createdAt": "2026-07-22T17:14:34.887Z",
+      "updatedAt": "2026-07-22T17:15:09.575Z"
+    },
+    "executionTime": 62166
+  },
+  "Poll Run Status": {
+    "json": {
+      "id": "run-bda1f0ee-9276-44a3-80d1-0ba6e9840639",
+      "agentId": "bc-e935328e-c03f-45f6-a7c9-81ad9bf42ea6",
+      "status": "ERROR",
+      "createdAt": "2026-07-22T17:14:34.887Z",
+      "updatedAt": "2026-07-22T17:15:09.575Z"
+    },
+    "hasResultField": false,
+    "hasDurationMsField": false
+  }
+}
